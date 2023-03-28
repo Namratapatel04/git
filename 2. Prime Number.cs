@@ -1,33 +1,38 @@
-// 1. Fibonacci Series
+// 2. Prime Number
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Fibonacci_Series
+namespace Primenumber
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Enter a number:");
+            int n;
             int a = 0;
-            int b = 1;
-            int c, len;
+            n = Convert.ToInt32(Console.ReadLine());
 
-            Console.WriteLine("Enter no of elements");
-            len = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("..............");
-            Console.WriteLine(a);
-            Console.WriteLine(b);
-            for (int i = 2; i < len; i++)
+            for (int i = 1; i <= n; i++) // i start 1 , check karange till input 
             {
-                c = a + b;
-                Console.WriteLine(c);
-                a = b;
-                b = c;
+                if (n % i == 0) // input divided by i if gives remainder 0 , a ++ 
+                {
+                    a++; // n kitne numbers se divisible hai 
+                }
+            }
+            if (a == 2)
+            {
+                Console.WriteLine("{0} is a Prime Number", n);
+            }
+            else
+            {
+                Console.WriteLine("{0} is  not a Prime Number", n);
             }
             Console.ReadLine();
+
         }
     }
 }
