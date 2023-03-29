@@ -1,38 +1,27 @@
-// 2. Prime Number
+// 3. Reverse Number
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Primenumber
+namespace Resverse_Number
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter a number:");
-            int n;
-            int a = 0;
-            n = Convert.ToInt32(Console.ReadLine());
-
-            for (int i = 1; i <= n; i++) // i start 1 , check karange till input 
+            int n , reverse=0 , rem;
+            Console.WriteLine("Enter a number");
+            n= Convert.ToInt32(Console.ReadLine());
+            while (n != 0)
             {
-                if (n % i == 0) // input divided by i if gives remainder 0 , a ++ 
-                {
-                    a++; // n kitne numbers se divisible hai 
-                }
+                rem = n % 10;
+                reverse= reverse * 10 +rem;
+                n /= 10;
             }
-            if (a == 2)
-            {
-                Console.WriteLine("{0} is a Prime Number", n);
-            }
-            else
-            {
-                Console.WriteLine("{0} is  not a Prime Number", n);
-            }
-            Console.ReadLine();
-
+            Console.WriteLine("Reverse" + reverse);
+            Console.Read();
         }
     }
 }
